@@ -1,0 +1,12 @@
+{
+  "generator-backbone": {
+    "appPath": "app",
+    "appName": "HealthTracker",
+    "testFramework": "jasmine",
+    "templateFramework": "lodash",
+    "sassBootstrap": true,
+    "coffee": false,
+    "includeRequireJS": false
+  },
+  "generator-jasmine": {}
+}
