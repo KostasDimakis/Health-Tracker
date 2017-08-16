@@ -9,7 +9,7 @@ var HealthTracker = {
   init: function () {
     'use strict';
     console.log('Hello from Backbone!');
-    // TODO: Now parse through the response and return a promise with the parsed response as argument
+    // TODO: Return a promise with the parsed response as argument
     const NUTRITIONIX_API = {
       NUTRITIONIX_X_APP_ID: '84d67ad4',
       NUTRITIONIX_X_APP_KEY: '3e892392c1929c39d4afdd9a44e14d60',
@@ -20,7 +20,7 @@ var HealthTracker = {
           return;
         }
         // build the request
-        const request = 'https://trackapi.nutritionix.com/v2/search/instant?self=false&query=' + query;
+        const request = 'https://trackapi.nutritionix.com/v2/search/instant?&branded=false&self=false&query=' + query;
         // add custom headers make the request
         fetch(request, {
           headers: {
@@ -34,7 +34,16 @@ var HealthTracker = {
             console.error(msg);
           } else {
             response.json().then(function(data) {
-              console.log(data);
+              var results = [];
+              for (let result of data.common) {
+                if (result.photo.thumb) {
+                  results.push({
+                    name: result.food_name,
+                    img: result.photo.thumb
+                  });
+                }
+              }
+              console.log(results);
             });
           }
         }).catch(function(error) {
@@ -68,7 +77,15 @@ var HealthTracker = {
             console.error(msg);
           } else {
             response.json().then(function(data) {
-              console.log(data);
+              var food = {
+                name: data.foods[0].food_name,
+                calories: data.foods[0].nf_calories,
+                protein: data.foods[0].nf_protein,
+                carbohydrates: data.foods[0].nf_total_carbohydrate,
+                fat: data.foods[0].nf_total_fat,
+                img: data.foods[0].photo.thumb
+              };
+              console.log(food);
             });
           }
         }).catch(function(error) {
@@ -76,6 +93,8 @@ var HealthTracker = {
         });
       }
     };
+    NUTRITIONIX_API.getResults('pancakes');
+    NUTRITIONIX_API.getNutrients('apple pancakes');
   }
 };
 
