@@ -6,7 +6,14 @@ HealthTracker.Routers = HealthTracker.Routers || {};
   'use strict';
 
   HealthTracker.Routers.Router = Backbone.Router.extend({
+    routes: {
+      '' : 'index',
+      '/search' : 'search',
+      '/foods/store' : 'store',
+      '/foods/destroy/:id' : 'destroy',
 
+      '*notFound': 'notFound'
+    }
   });
 
 })();
