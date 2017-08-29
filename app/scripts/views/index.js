@@ -7,7 +7,7 @@ HealthTracker.Views = HealthTracker.Views || {};
 
   HealthTracker.Views.Index = Backbone.View.extend({
 
-    el: '.container',
+    el: '#app',
 
     template: JST['app/scripts/templates/index.ejs'],
 
@@ -30,5 +30,4 @@ HealthTracker.Views = HealthTracker.Views || {};
     }
 
   });
-
 })();
