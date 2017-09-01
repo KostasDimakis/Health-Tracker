@@ -19,3 +19,32 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 .navbar-right {
   float: right!important;
 }
+
+.thumbnail__no-border {
+  border: none;
+}
+
+.nutritients {
+  border-top: thin solid #efefef;
+  padding-top: 1em;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+}
+
+.calories {
+  color: #d2906e;
+}
+
+.protein {
+  color: #d3666b;
+}
+
+.carbs {
+  color: #eeeb5c;
+}
+
+.fat {
+  color: #7c82e2;
+}
