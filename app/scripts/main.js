@@ -115,11 +115,11 @@ var HealthTracker = {
   init: function () {
     'use strict';
     console.log('Hello from Backbone!');
+    // kick start the app on the index view
+    new HealthTracker.Views.Index();
     // start router
     router = new HealthTracker.Routers.Router();
     Backbone.history.start();
-    // kick start the app on the index view
-    new HealthTracker.Views.Index();
   }
 };
 

@@ -16,7 +16,7 @@ HealthTracker.Routers = HealthTracker.Routers || {};
     },
 
     index: function() {
-
+      Backbone.trigger('app:index');
     },
 
     search: function() {

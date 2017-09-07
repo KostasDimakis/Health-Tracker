@@ -20,13 +20,15 @@ HealthTracker.Views = HealthTracker.Views || {};
     events: {},
 
     initialize: function () {
+      // Setup listeners
       // this.listenTo(this.model, 'change', this.render);
-      this.render();
+      this.listenTo(Backbone, 'app:index', this.render);
     },
 
     render: function () {
       // this.$el.html(this.template(this.model.toJSON()));
       this.$el.html(this.template());
+      new HealthTracker.Views.DailyView();
     }
 
   });
