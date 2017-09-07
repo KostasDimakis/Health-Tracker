@@ -25,8 +25,7 @@ HealthTracker.Views = HealthTracker.Views || {};
     },
 
     render: function () {
-      this.$el.append(this.template());
-      new HealthTracker.Views.FoodView();
+      this.$el.prepend(this.template());
     }
 
   });

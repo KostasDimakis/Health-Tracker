@@ -7,7 +7,7 @@ HealthTracker.Views = HealthTracker.Views || {};
 
   HealthTracker.Views.FoodView = Backbone.View.extend({
 
-    el: '.card:last',
+    el: '.card:first .foods',
 
     template: JST['app/scripts/templates/food-view.ejs'],
 
@@ -25,7 +25,7 @@ HealthTracker.Views = HealthTracker.Views || {};
     },
 
     render: function () {
-      this.$el.append(this.template());
+      this.$el.prepend(this.template());
     }
 
   });
