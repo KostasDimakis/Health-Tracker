@@ -7,6 +7,8 @@ HealthTracker.Views = HealthTracker.Views || {};
 
   HealthTracker.Views.SearchView = Backbone.View.extend({
 
+    el: '#app',
+
     template: JST['app/scripts/templates/search-view.ejs'],
 
     tagName: 'div',
@@ -18,11 +20,12 @@ HealthTracker.Views = HealthTracker.Views || {};
     events: {},
 
     initialize: function () {
-      this.listenTo(this.model, 'change', this.render);
+      // this.listenTo(this.model, 'change', this.render);
+      this.listenTo(Backbone, 'app:search', this.render);
     },
 
     render: function () {
-      this.$el.html(this.template(this.model.toJSON()));
+      this.$el.html(this.template());
     }
 
   });

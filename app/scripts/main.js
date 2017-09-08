@@ -116,6 +116,7 @@ var HealthTracker = {
     'use strict';
     console.log('Hello from Backbone!');
     // kick start the app views
+    new HealthTracker.Views.SearchView();
     new HealthTracker.Views.Index();
     // start router
     router = new HealthTracker.Routers.Router();
