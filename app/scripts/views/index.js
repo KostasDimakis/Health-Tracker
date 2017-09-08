@@ -18,7 +18,7 @@ HealthTracker.Views = HealthTracker.Views || {};
     className: '',
 
     events: {
-      'click .glyphicon-plus': 'navigateToSearchView'
+      'click #add': 'navigateToSearchView'
     },
 
     initialize: function () {
