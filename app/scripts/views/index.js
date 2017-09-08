@@ -39,6 +39,7 @@ HealthTracker.Views = HealthTracker.Views || {};
       // Whenever there is a new day trigger 'app:day'
       // Whenever there is a new food in that particular day trigger 'app:food'
       // Now this is just a template to show it's working
+      // Maybe just use new instead of triggers?
       Backbone.trigger('app:day');
       Backbone.trigger('app:food');
     },
