@@ -26,6 +26,9 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     render: function () {
       this.$el.html(this.template());
+      // This line is to be removed and be used
+      // only when a new result is ready
+      new HealthTracker.Views.ResultView();
     }
 
   });
