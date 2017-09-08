@@ -32,7 +32,7 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     navigateToIndexView: function(e) {
       // Store the new item to the collection
-      // On successful store throw an auto dismissible success notification
+      // TODO: On successful store throw an auto dismissible success notification
       // Navigate back to index
       e.preventDefault();
       router.navigate('', {trigger: true});
