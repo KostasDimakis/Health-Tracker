@@ -17,7 +17,9 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     className: '',
 
-    events: {},
+    events: {
+      'click .media-right': 'navigateToIndexView'
+    },
 
     initialize: function () {
       // this.listenTo(this.model, 'change', this.render);
@@ -26,6 +28,14 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     render: function () {
       this.$el.append(this.template());
+    },
+
+    navigateToIndexView: function(e) {
+      // Store the new item to the collection
+      // On successful store throw an auto dismissible success notification
+      // Navigate back to index
+      e.preventDefault();
+      router.navigate('', {trigger: true});
     }
 
   });
