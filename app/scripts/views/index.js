@@ -17,7 +17,9 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     className: '',
 
-    events: {},
+    events: {
+      'click .glyphicon-plus': 'navigateToSearchView'
+    },
 
     initialize: function () {
       // Setup listeners
@@ -39,6 +41,11 @@ HealthTracker.Views = HealthTracker.Views || {};
       // Now this is just a template to show it's working
       Backbone.trigger('app:day');
       Backbone.trigger('app:food');
+    },
+
+    navigateToSearchView: function(e) {
+      e.preventDefault();
+      router.navigate('search', {trigger: true});
     },
 
     _newDay: function() {
