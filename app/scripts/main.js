@@ -121,7 +121,7 @@ var HealthTracker = {
     // start router
     router = new HealthTracker.Routers.Router();
     Backbone.history.start();
-    // TODO: Figure out the correct way to store my data in localStorage using models and collections
+    // TODO: Create a new branch, structuring the data to Days and Foods
   }
 };
 
