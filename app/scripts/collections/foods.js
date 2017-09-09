@@ -7,7 +7,9 @@ HealthTracker.Collections = HealthTracker.Collections || {};
 
   HealthTracker.Collections.Foods = Backbone.Collection.extend({
 
-    model: HealthTracker.Models.Foods
+    model: HealthTracker.Models.Food,
+
+    localStorage: new Backbone.LocalStorage('foods-backbone'),
 
   });
 
