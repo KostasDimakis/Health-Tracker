@@ -27,9 +27,19 @@ HealthTracker.Views = HealthTracker.Views || {};
       this.listenTo(Backbone, 'app:index', this.render);
       // This event triggers a new day to be prepended
       // on the timeline
+      // Prepending is wrong. Sorting logic
+      // should come from the collection.
+      // The view only takes data and presents
+      // it to the user. Nothing more.
+      // TODO: Check if this correct, but probably it needs fix. Fix to appending
       this.listenTo(Backbone, 'app:day', this._newDay);
       // This event triggers a new food to be prepended
       // on the most recent day that's present on the timeline
+      // Prepending is wrong. Sorting logic
+      // should come from the collection.
+      // The view only takes data and presents
+      // it to the user. Nothing more.
+      // TODO: Check if this correct, but probably it needs fix. Fix to appending
       this.listenTo(Backbone, 'app:food', this._newFood);
     },
 

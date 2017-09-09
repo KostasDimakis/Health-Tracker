@@ -25,6 +25,11 @@ HealthTracker.Views = HealthTracker.Views || {};
     },
 
     render: function () {
+      // Prepending is wrong. Sorting logic
+      // should come from the collection.
+      // The view only takes data and presents
+      // it to the user. Nothing more.
+      // TODO: Check if this correct, but probably it needs fix. Fix to appending
       this.$el.prepend(this.template());
     }
 
