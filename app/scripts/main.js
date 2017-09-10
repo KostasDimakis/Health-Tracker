@@ -115,7 +115,10 @@ var HealthTracker = {
   init: function () {
     'use strict';
     console.log('Hello from Backbone!');
-    // TODO: New up a new collection and add items
+    // create a new collection and fetch
+    // any foods from localStorage
+    var foods = new HealthTracker.Collections.Foods();
+    foods.fetch();
     // TODO: Wire up the destroy functionality
     // TODO: Check if localStorage works
     // kick start the app views
