@@ -19,15 +19,13 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     events: {},
 
-    model: HealthTracker.Models.Food,
-
     initialize: function () {
       // this.listenTo(this.model, 'change', this.render);
       this.render();
     },
 
     render: function () {
-      this.$el.append(this.template());
+      this.$el.append(this.template(this.model.toJSON()));
     }
 
   });
