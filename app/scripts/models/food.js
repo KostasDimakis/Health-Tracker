@@ -14,8 +14,8 @@ HealthTracker.Models = HealthTracker.Models || {};
       date: Date.now(),
       // In case no image was provided
       img: 'https://www.nutritionix.com/images/apple-touch-icon-152x152.png',
-      fat: 0,
-      protein: 0,
+      fats: 0,
+      proteins: 0,
       carbohydrates: 0,
       calories: 0
     },
