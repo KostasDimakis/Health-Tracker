@@ -106,6 +106,7 @@ const NUTRITIONIX_API = {
 };
 
 var router;
+var foods;
 
 var HealthTracker = {
   Models: {},
@@ -117,7 +118,7 @@ var HealthTracker = {
     console.log('Hello from Backbone!');
     // create a new collection and fetch
     // any foods from localStorage
-    var foods = new HealthTracker.Collections.Foods();
+    foods = new HealthTracker.Collections.Foods();
     foods.fetch();
     // TODO: Wire up the destroy functionality
     // TODO: Check if localStorage works
