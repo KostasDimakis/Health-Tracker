@@ -27,7 +27,7 @@ $text-colors-calories: #d2906e;
 $text-colors-protein: #d3666b;
 $text-colors-carbs: #eeeb5c;
 $text-colors-fat: #7c82e2;
-$text-colors-title-small: #959595;
+$text-colors-date: #959595;
 $background-colors-app: #fafafa;
 $border-colors-light-grey: #efefef;
 $margin-small: 0.6em;
@@ -68,34 +68,11 @@ body {
   border: none;
 }
 
-.stats-bar {
-  display: flex;
-  justify-content: space-between;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: $padding-medium;
-}
-
-@media screen and (max-width: 400px) {
-  .stats-bar {
-    display: block;
-  }
-}
-
-.title--small {
-  color: $text-colors-title-small;
+.date {
+  color: $text-colors-date;
   font-size: inherit;
-  margin: 0;
-}
-
-.stats-bar__nutrients {
-  margin: 0;
-  display: flex;
-  font-size: 1em;
-}
-
-.stats-bar__nutrients > *:not(:first-child) {
-  margin-left: $margin-medium;
+  margin-top: $margin-small;
+  margin-bottom: 0;
 }
 
 .nutrients {
@@ -134,5 +111,4 @@ body {
 
 .result {
   border-bottom: thin solid $border-colors-light-grey;
-
 }
