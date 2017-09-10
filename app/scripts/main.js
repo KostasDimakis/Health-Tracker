@@ -105,7 +105,10 @@ const NUTRITIONIX_API = {
   }
 };
 
+// router is used in router.js
 var router;
+// foods is used in index.js
+// and stores the foods collection
 var foods;
 
 var HealthTracker = {
