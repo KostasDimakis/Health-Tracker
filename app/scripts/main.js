@@ -115,6 +115,9 @@ var HealthTracker = {
   init: function () {
     'use strict';
     console.log('Hello from Backbone!');
+    // TODO: New up a new collection and add items
+    // TODO: Wire up the destroy functionality
+    // TODO: Check if localStorage works
     // kick start the app views
     new HealthTracker.Views.SearchView();
     new HealthTracker.Views.Index();
