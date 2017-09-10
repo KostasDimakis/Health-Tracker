@@ -17,8 +17,9 @@ HealthTracker.Models = HealthTracker.Models || {};
       fats: 0,
       proteins: 0,
       carbohydrates: 0,
-      calories: 0
-      // date attribute, see parse method
+      calories: 0,
+      // see parse method for date attr
+      date: ''
     },
 
     validate: function(attrs, options) {
