@@ -19,8 +19,9 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     events: {},
 
-    initialize: function () {
-      // this.listenTo(this.model, 'change', this.render);
+    initialize: function (food) {
+      this.model = food;
+      this.listenTo(this.model, 'change', this.render);
       this.render();
     },
 
