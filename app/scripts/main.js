@@ -107,7 +107,8 @@ const NUTRITIONIX_API = {
 
 // router is used in router.js
 var router;
-
+// TODO: Fix search-view to follow the same logic as this one
+// TODO: Do a general check on the app for "wrong" code
 var HealthTracker = {
   Models: {},
   Collections: {},
