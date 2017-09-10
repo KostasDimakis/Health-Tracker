@@ -32,8 +32,8 @@ HealthTracker.Views = HealthTracker.Views || {};
       // render header
       this.$el.html(this.template());
       // and now render foods
-      foods.forEach(function(food) {
-        new HealthTracker.Views.FoodView(food);
+      this.collection.forEach(function(food) {
+        new HealthTracker.Views.FoodView({ model: food });
       });
     },
 

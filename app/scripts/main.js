@@ -107,9 +107,6 @@ const NUTRITIONIX_API = {
 
 // router is used in router.js
 var router;
-// foods is used in index.js
-// and stores the foods collection
-var foods;
 
 var HealthTracker = {
   Models: {},
@@ -119,14 +116,14 @@ var HealthTracker = {
   init: function () {
     'use strict';
     console.log('Hello from Backbone!');
-    // create a new collection and fetch
+    // create a collection and fetch
     // any foods from localStorage
-    foods = new HealthTracker.Collections.Foods();
+    var foods = new HealthTracker.Collections.Foods();
     foods.fetch();
     // TODO: Wire up the destroy functionality
     // kick start the app views
-    new HealthTracker.Views.SearchView();
-    new HealthTracker.Views.Index();
+    new HealthTracker.Views.SearchView({ collection: foods });
+    new HealthTracker.Views.Index({ collection: foods });
     // start router
     router = new HealthTracker.Routers.Router();
     Backbone.history.start();
