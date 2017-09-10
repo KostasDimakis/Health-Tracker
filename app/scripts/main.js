@@ -121,7 +121,6 @@ var HealthTracker = {
     // start router
     router = new HealthTracker.Routers.Router();
     Backbone.history.start();
-    // TODO: Create a new branch, structuring the data to Days and Foods
   }
 };
 
