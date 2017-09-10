@@ -7,8 +7,6 @@ HealthTracker.Views = HealthTracker.Views || {};
 
   HealthTracker.Views.FoodView = Backbone.View.extend({
 
-    el: '#foods',
-
     template: JST['app/scripts/templates/food-view.ejs'],
 
     tagName: 'div',
@@ -21,11 +19,10 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     initialize: function () {
       this.listenTo(this.model, 'change', this.render);
-      this.render();
     },
 
     render: function () {
-      this.$el.append(this.template(this.model.toJSON()));
+      this.$el.html(this.template(this.model.toJSON()));
     }
 
   });
