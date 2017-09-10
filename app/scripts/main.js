@@ -120,8 +120,9 @@ var HealthTracker = {
     // any foods from localStorage
     foods = new HealthTracker.Collections.Foods();
     foods.fetch();
+    // TODO: Show the hour too
+    // TODO: Fix to show local times
     // TODO: Wire up the destroy functionality
-    // TODO: Check if localStorage works
     // kick start the app views
     new HealthTracker.Views.SearchView();
     new HealthTracker.Views.Index();
