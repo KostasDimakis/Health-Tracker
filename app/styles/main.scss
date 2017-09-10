@@ -60,7 +60,6 @@ body {
 
 .card {
   background-color: white;
-  margin: $margin-medium 0;
   @extend %shadow--2dp;
   @extend %rounded--2dp;
 }
