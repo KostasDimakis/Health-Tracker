@@ -16,7 +16,7 @@ HealthTracker.Collections = HealthTracker.Collections || {};
       // now my data is in descending order
       // meaning the most recent timestamp
       // is first and the oldest is last
-      return -food.get('date');
+      return -food.get('timestamp');
     }
 
   });
