@@ -121,7 +121,6 @@ var HealthTracker = {
     // any foods from localStorage
     var foods = new HealthTracker.Collections.Foods();
     foods.fetch();
-    // TODO: Wire up the destroy functionality
     // kick start the app views
     new HealthTracker.Views.SearchView({ collection: foods });
     new HealthTracker.Views.Index({ collection: foods });
