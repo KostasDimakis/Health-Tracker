@@ -27,7 +27,7 @@ HealthTracker.Views = HealthTracker.Views || {};
       this.listenTo(Backbone, 'app:index', this.render);
     },
 
-    render: function () {
+    render        : function () {
       // this.$el.html(this.template(this.model.toJSON()));
       // render header
       this.$el.html(this.template());
@@ -35,16 +35,20 @@ HealthTracker.Views = HealthTracker.Views || {};
       // every food has to be appended on #foods
       // that's inside index template
       var $target = $('#foods');
-      this.collection.forEach(food => {
-        let foodView = new HealthTracker.Views.FoodView({ model: food });
-        foodView.render();
-        $target.append(foodView.el);
-      });
+      this._renderCollection($target);
     },
 
     navigateToSearchView: function(e) {
       e.preventDefault();
       router.navigate('search', {trigger: true});
+    },
+
+    _renderCollection: function($target) {
+      this.collection.forEach(food => {
+        let foodView = new HealthTracker.Views.FoodView({ model: food });
+        foodView.render();
+        $target.append(foodView.el);
+      });
     }
 
   });
