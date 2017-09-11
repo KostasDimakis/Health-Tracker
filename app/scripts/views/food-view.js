@@ -15,14 +15,23 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     className: '',
 
-    events: {},
+    events: {
+      'click .close': 'clear'
+    },
 
     initialize: function () {
       this.listenTo(this.model, 'change', this.render);
+      this.listenTo(this.model, 'destroy', this.remove);
     },
 
     render: function () {
       this.$el.html(this.template(this.model.toJSON()));
+    },
+
+    clear: function() {
+      this.$el.fadeTo('slow', 0, () => {
+        this.model.destroy();
+      });
     }
 
   });
