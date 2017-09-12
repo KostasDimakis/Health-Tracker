@@ -11,6 +11,7 @@ HealthTracker.Models = HealthTracker.Models || {};
     },
 
     defaults: {
+      name: '',
       timestamp: Date.now(),
       // In case no image was provided
       img: 'https://www.nutritionix.com/images/apple-touch-icon-152x152.png',
