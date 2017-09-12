@@ -107,7 +107,7 @@ const NUTRITIONIX_API = {
 
 // router is used in router.js
 var router;
-// TODO: Do a general check on the app for "wrong" code
+
 var HealthTracker = {
   Models: {},
   Collections: {},
