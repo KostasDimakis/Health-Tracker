@@ -28,8 +28,6 @@ HealthTracker.Routers = HealthTracker.Routers || {};
       window.location = '../../404.html';
     }
 
-    // TODO: Introduce error route to backbone's routing
-
   });
 
 })();
