@@ -28,7 +28,6 @@ HealthTracker.Views = HealthTracker.Views || {};
     },
 
     render: function () {
-      // this.$el.html(this.template(this.model.toJSON()));
       // render header
       this.$el.html(this.template());
       // and now render foods
