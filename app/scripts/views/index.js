@@ -27,7 +27,7 @@ HealthTracker.Views = HealthTracker.Views || {};
       this.listenTo(Backbone, 'app:index', this.render);
     },
 
-    render        : function () {
+    render: function () {
       // this.$el.html(this.template(this.model.toJSON()));
       // render header
       this.$el.html(this.template());
