@@ -107,9 +107,9 @@ body {
 #back {
   padding: $padding-large;
   color: $navbar-default-link-color;
-}
-#back:hover {
-  color: $navbar-default-link-hover-color;
+  &:hover {
+    color: $navbar-default-link-hover-color;
+  }
 }
 
 #input {
