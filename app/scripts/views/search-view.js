@@ -27,7 +27,14 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     render: function () {
       this.$el.html(this.template());
-      // TODO: Follow the index logic here
+      // var target = $('#results');
+      // let food = new HealthTracker.Models.Food({name: 'banana'});
+      // let resultView = new HealthTracker.Views.ResultView({
+      //   model: food,
+      //   collection: this.collection
+      // });
+      // resultView.render();
+      // target.append(resultView.$el);
     },
 
     navigateToIndexView: function(e) {

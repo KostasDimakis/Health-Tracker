@@ -15,7 +15,9 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     className: '',
 
-    events: {},
+    events: {
+      'click .add': 'store'
+    },
 
     initialize: function () {
       this.listenTo(this.model, 'change', this.render);
@@ -23,6 +25,17 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     render: function () {
       this.$el.html(this.template(this.model.toJSON()));
+    },
+
+    store: function() {
+      this.collection.add(this.model);
+      this.model.save();
+      this._navigateToIndexView();
+    },
+
+    _navigateToIndexView: function() {
+      // Navigate to index
+      router.navigate('', {trigger: true});
     }
 
   });
