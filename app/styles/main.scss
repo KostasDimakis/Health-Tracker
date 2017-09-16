@@ -100,8 +100,20 @@ body {
   color: $text-colors-fat;
 }
 
-#search-form * {
-  width: 100%;
+.search-view__header {
+  display: flex;
+}
+
+#back {
+  padding: $padding-large;
+  color: $navbar-default-link-color;
+}
+#back:hover {
+  color: $navbar-default-link-hover-color;
+}
+
+#input {
+  margin-top: $margin-small;
 }
 
 .media--thumbnail {
