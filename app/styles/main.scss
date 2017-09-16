@@ -116,6 +116,13 @@ body {
   margin-top: $margin-small;
 }
 
+.add {
+  color: $navbar-default-link-color;
+  &:hover {
+    color: $navbar-default-link-hover-color;
+  }
+}
+
 .media--thumbnail {
   width: 64px;
   height: auto;
