@@ -7,8 +7,6 @@ HealthTracker.Views = HealthTracker.Views || {};
 
   HealthTracker.Views.ResultView = Backbone.View.extend({
 
-    el: '#results',
-
     template: JST['app/scripts/templates/result-view.ejs'],
 
     tagName: 'div',
@@ -17,23 +15,14 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     className: '',
 
-    events: {
-      'click .media-right': 'navigateToIndexView'
-    },
+    events: {},
 
     initialize: function () {
-      // this.listenTo(this.model, 'change', this.render);
-      this.render();
+      this.listenTo(this.model, 'change', this.render);
     },
 
     render: function () {
-      this.$el.append(this.template());
-    },
-
-    navigateToIndexView: function(e) {
-      // Navigate back to index
-      e.preventDefault();
-      router.navigate('', {trigger: true});
+      this.$el.html(this.template(this.model.toJSON()));
     }
 
   });
