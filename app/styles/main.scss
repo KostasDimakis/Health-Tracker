@@ -51,6 +51,13 @@ $text-size-large: 16px;
   border-radius: 4px;
 }
 
+%link--simple {
+  color: $navbar-default-link-color;
+  &:hover {
+    color: $navbar-default-link-hover-color;
+  }
+}
+
 // END Placeholders
 
 body {
@@ -106,10 +113,7 @@ body {
 
 #back {
   padding: $padding-large;
-  color: $navbar-default-link-color;
-  &:hover {
-    color: $navbar-default-link-hover-color;
-  }
+  @extend %link--simple;
 }
 
 #input {
@@ -117,10 +121,7 @@ body {
 }
 
 .add {
-  color: $navbar-default-link-color;
-  &:hover {
-    color: $navbar-default-link-hover-color;
-  }
+  @extend %link--simple;
 }
 
 .media--thumbnail {
