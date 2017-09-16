@@ -17,7 +17,9 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     className: '',
 
-    events: {},
+    events: {
+      'click #back': 'navigateToIndexView'
+    },
 
     initialize: function () {
       this.listenTo(Backbone, 'app:search', this.render);
@@ -26,6 +28,12 @@ HealthTracker.Views = HealthTracker.Views || {};
     render: function () {
       this.$el.html(this.template());
       // TODO: Follow the index logic here
+    },
+
+    navigateToIndexView: function(e) {
+      // Navigate back to index
+      e.preventDefault();
+      router.navigate('', {trigger: true});
     }
 
   });
