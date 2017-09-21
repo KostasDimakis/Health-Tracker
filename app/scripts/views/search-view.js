@@ -23,6 +23,7 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     initialize: function () {
       this.listenTo(Backbone, 'app:search', this.render);
+      // TODO: Listen for changes in search bar and do as I was thinking about on the boat, with throttling and checking for last change
     },
 
     render: function () {
