@@ -27,6 +27,8 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     render: function () {
       this.$el.html(this.template());
+      // TODO: Create a function that renders results just like in index.js
+      // Example usage
       // var target = $('#results');
       // let food = new HealthTracker.Models.Food({name: 'banana'});
       // let resultView = new HealthTracker.Views.ResultView({
