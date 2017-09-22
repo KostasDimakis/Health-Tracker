@@ -18,7 +18,8 @@ HealthTracker.Views = HealthTracker.Views || {};
     className: '',
 
     events: {
-      'click #back': 'navigateToIndexView'
+      'click #back': 'navigateToIndexView',
+      'input #input': 'onChange'
     },
 
     initialize: function () {
@@ -44,6 +45,10 @@ HealthTracker.Views = HealthTracker.Views || {};
       // Navigate back to index
       e.preventDefault();
       router.navigate('', {trigger: true});
+    },
+
+    onChange: function() {
+      console.log('hello');
     }
 
   });
