@@ -126,6 +126,7 @@ var HealthTracker = {
     // start router
     router = new HealthTracker.Routers.Router();
     Backbone.history.start();
+    // TODO: Think about the architecture of the search view and if I need more views and models and collections to handle the results data
   }
 };
 
