@@ -28,8 +28,13 @@ HealthTracker.Views = HealthTracker.Views || {};
     },
 
     store: function() {
-      this.collection.add(this.model);
-      this.model.save();
+      NUTRITIONIX_API.getNutrients(this.model.get('name')).then( (data) => {
+        this.model = new HealthTracker.Models.Food(data);
+        this.collection.add(this.model);
+        this.model.save();
+      }).catch(function(error) {
+        console.error('There has been a problem with your fetch operation: ' + error);
+      });
       this._navigateToIndexView();
     },
 
