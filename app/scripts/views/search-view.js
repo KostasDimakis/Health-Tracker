@@ -24,21 +24,10 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     initialize: function () {
       this.listenTo(Backbone, 'app:search', this.render);
-      // TODO: Listen for changes in search bar and do as I was thinking about on the boat, with throttling and checking for last change
     },
 
     render: function () {
       this.$el.html(this.template());
-      // TODO: Create a function that renders results just like in index.js
-      // Example usage
-      // var target = $('#results');
-      // let food = new HealthTracker.Models.Food({name: 'banana'});
-      // let resultView = new HealthTracker.Views.ResultView({
-      //   model: food,
-      //   collection: this.collection
-      // });
-      // resultView.render();
-      // target.append(resultView.$el);
     },
 
     navigateToIndexView: function(e) {
@@ -47,8 +36,30 @@ HealthTracker.Views = HealthTracker.Views || {};
       router.navigate('', {trigger: true});
     },
 
-    onChange: function() {
-      console.log('hello');
+    onChange   : function() {
+      var $target = $('#results');
+      var $input = $('#input');
+
+      NUTRITIONIX_API.getResults($input.val()).then( (data) => {
+        this._renderResults($target, data);
+      }).catch(function(error) {
+        console.error('There has been a problem with your fetch operation: ' + error);
+      });
+    },
+
+    _renderResults: function($target, data) {
+      // clear previous results
+      $target.html('');
+      // append each search result
+      data.forEach((item) => {
+        let food = new HealthTracker.Models.Food(item);
+        let resultView = new HealthTracker.Views.ResultView({
+          model     : food,
+          collection: this.collection
+        });
+        resultView.render();
+        $target.append(resultView.$el);
+      });
     }
 
   });
