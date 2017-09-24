@@ -93,11 +93,12 @@ const NUTRITIONIX_API = {
       return response.json();
     }).then(function(data) {
       var food = {
+        timestamp: Date.now(),
         name: data.foods[0].food_name,
         calories: data.foods[0].nf_calories,
-        protein: data.foods[0].nf_protein,
+        proteins: data.foods[0].nf_protein,
         carbohydrates: data.foods[0].nf_total_carbohydrate,
-        fat: data.foods[0].nf_total_fat,
+        fats: data.foods[0].nf_total_fat,
         img: data.foods[0].photo.thumb
       };
       return food;
