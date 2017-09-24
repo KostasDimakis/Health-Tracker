@@ -23,7 +23,7 @@ HealthTracker.Views = HealthTracker.Views || {};
 
     initialize: function () {
       // Setup listeners
-      // this.listenTo(this.model, 'change', this.render);
+      this.listenTo(this.collection, 'change', this.render);
       this.listenTo(Backbone, 'app:index', this.render);
     },
 
