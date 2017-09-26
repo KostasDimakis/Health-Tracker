@@ -116,7 +116,6 @@ var HealthTracker = {
   Routers: {},
   init: function () {
     'use strict';
-    console.log('Hello from Backbone!');
     // create a collection and fetch
     // any foods from localStorage
     var foods = new HealthTracker.Collections.Foods();
