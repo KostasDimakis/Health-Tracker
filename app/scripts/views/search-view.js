@@ -43,14 +43,15 @@ HealthTracker.Views = HealthTracker.Views || {};
      * render the results
      */
     onChange   : function() {
+      // search query
+      var query = $('#input').val();
+
       // the search results will be appended on #results
       var $target = $('#results');
-      // search input
-      var $input = $('#input');
 
-      // query the API for results on input's value
+      // query the API for results
       // and then render them
-      NUTRITIONIX_API.getResults($input.val()).then( (data) => {
+      NUTRITIONIX_API.getResults(query).then( (data) => {
         this._renderResults($target, data);
       }).catch(function(error) {
         console.error('There has been a problem with your fetch operation: ' + error);

@@ -28,9 +28,10 @@ const NUTRITIONIX_API = {
    * @return {Promise.<TResult>} An array of objects with name, img properties.
    */
   getResults: function(query) {
-    // check the argument
+    // if argument is empty string
+    // return an empty array
     if (!query) {
-      throw new Error('No query argument was found in getResults');
+      return Promise.resolve([]);
     }
     // build the request
     const request = 'https://trackapi.nutritionix.com/v2/search/instant?&branded=false&self=false&query=' + query;
