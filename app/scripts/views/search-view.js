@@ -37,6 +37,7 @@ HealthTracker.Views = HealthTracker.Views || {};
     },
 
     onChange   : function() {
+      // TODO: Throttle requests
       var $target = $('#results');
       var $input = $('#input');
 
