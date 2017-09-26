@@ -37,6 +37,12 @@ HealthTracker.Views = HealthTracker.Views || {};
     },
 
     onChange   : function() {
+      // TODO: Account for network delays by making sure the input value correlates to the search results
+      // With network delays and async programming a scenario can be:
+      // 1. Input A is sent to the API
+      // 2. User types again and Input B is sent to the API
+      // 3. Results B come in faster than Results A
+      // 4. Results B (which is the correct, because it correlates with Input B) get overwritten by Results A
       var $target = $('#results');
       var $input = $('#input');
 
