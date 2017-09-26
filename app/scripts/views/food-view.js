@@ -28,6 +28,9 @@ HealthTracker.Views = HealthTracker.Views || {};
       this.$el.html(this.template(this.model.toJSON()));
     },
 
+    /**
+     * Fade out the view and destroy the model
+     */
     clear: function() {
       this.$el.fadeTo('slow', 0, () => {
         this.model.destroy();

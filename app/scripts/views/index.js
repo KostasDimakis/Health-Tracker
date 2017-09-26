@@ -42,7 +42,15 @@ HealthTracker.Views = HealthTracker.Views || {};
       router.navigate('search', {trigger: true});
     },
 
+    /**
+     * Append food views on target element
+     * @param {jQuery} $target
+     * @private
+     */
     _renderCollection: function($target) {
+      // for each food in the collection
+      // create a new food view
+      // render it and append it on target
       this.collection.forEach(food => {
         let foodView = new HealthTracker.Views.FoodView({ model: food });
         foodView.render();

@@ -27,19 +27,29 @@ HealthTracker.Views = HealthTracker.Views || {};
     },
 
     render: function () {
+      // render search view
       this.$el.html(this.template());
     },
 
     navigateToIndexView: function(e) {
-      // Navigate back to index
+      // Navigate to index
       e.preventDefault();
       router.navigate('', {trigger: true});
     },
 
+    /**
+     * When the value of the search input changes,
+     * query the API with the new value and
+     * render the results
+     */
     onChange   : function() {
+      // the search results will be appended on #results
       var $target = $('#results');
+      // search input
       var $input = $('#input');
 
+      // query the API for results on input's value
+      // and then render them
       NUTRITIONIX_API.getResults($input.val()).then( (data) => {
         this._renderResults($target, data);
       }).catch(function(error) {
@@ -47,10 +57,18 @@ HealthTracker.Views = HealthTracker.Views || {};
       });
     },
 
+    /**
+     * Append result views from data, on target element
+     * @param {jQuery} $target Target
+     * @param {Array} data Food data
+     * @private
+     */
     _renderResults: function($target, data) {
       // clear previous results
       $target.html('');
-      // append each search result
+      // for each result
+      // create a new result view
+      // and append it on $target
       data.forEach((item) => {
         let food = new HealthTracker.Models.Food(item);
         let resultView = new HealthTracker.Views.ResultView({

@@ -9,21 +9,22 @@ HealthTracker.Routers = HealthTracker.Routers || {};
     routes: {
       '' : 'index',
       'search' : 'search',
-      // '/foods/store' : 'store',
-      // '/foods/destroy/:id' : 'destroy',
 
       '*notFound': 'notFound'
     },
 
     index: function() {
+      // trigger index view
       Backbone.trigger('app:index');
     },
 
     search: function() {
+      // triger search view
       Backbone.trigger('app:search');
     },
 
     notFound: function() {
+      // 404
       window.location = '../../404.html';
     }
 

@@ -27,7 +27,13 @@ HealthTracker.Views = HealthTracker.Views || {};
       this.$el.html(this.template(this.model.toJSON()));
     },
 
+    /**
+     * Store a the selected food's nutrients using Nutritionix
+     * nutrients API endpoint.
+     */
     store: function() {
+      // from the selected food's name, get its nutrients
+      // and save it in the foods collection
       NUTRITIONIX_API.getNutrients(this.model.get('name')).then( (data) => {
         this.model = new HealthTracker.Models.Food(data);
         this.collection.add(this.model);
