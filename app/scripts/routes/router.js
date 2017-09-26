@@ -24,7 +24,6 @@ HealthTracker.Routers = HealthTracker.Routers || {};
     },
 
     notFound: function() {
-      // TODO: Make this part of backbone's routing
       window.location = '../../404.html';
     }
 
