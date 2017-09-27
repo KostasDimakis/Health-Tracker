@@ -129,7 +129,7 @@ module.exports = function (grunt) {
       ]
     },
     jasmine: {
-      all:{
+      all: {
         src : '<%= yeoman.app %>/scripts/{,*/}*.js',
         options: {
           keepRunner: true,
