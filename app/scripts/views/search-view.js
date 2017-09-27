@@ -47,6 +47,7 @@ HealthTracker.Views = HealthTracker.Views || {};
       });
     },
 
+    // TODO: Restructure the whole search. Have a dedicated collection for search results or maybe even force Backbone's fetch to do the API call
     _renderResults: function($target, data) {
       // clear previous results
       $target.html('');
