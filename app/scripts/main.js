@@ -1,5 +1,4 @@
-/*global HealthTracker, $*/
-
+/* jshint unused:false */
 /**
  * Object that handles the nutrituonix api
  * @type {{NUTRITIONIX_X_APP_ID: string, NUTRITIONIX_X_APP_KEY: string, getResults: getResults, getNutrients: getNutrients}}
@@ -28,6 +27,7 @@ const NUTRITIONIX_API = {
    * @return {Promise.<TResult>} An array of objects with name, img properties.
    */
   getResults: function(query) {
+    'use strict';
     // if argument is empty string
     // return an empty array
     if (!query) {
@@ -52,6 +52,7 @@ const NUTRITIONIX_API = {
       for (let result of data.common) {
         if (result.photo.thumb) {
           foods.push({
+            /* jshint camelcase: false */
             name: result.food_name,
             img: result.photo.thumb
           });
@@ -68,6 +69,7 @@ const NUTRITIONIX_API = {
    * @return {Promise.<TResult>} An object with properties: name, calories, protein, carbohydrates, fat, img.
    */
   getNutrients: function(query) {
+    'use strict';
     // check the argument
     if (!query) {
       throw new Error('No query argument was found in getResults');
@@ -94,6 +96,7 @@ const NUTRITIONIX_API = {
       return response.json();
     }).then(function(data) {
       var food = {
+        /* jshint camelcase: false */
         timestamp: Date.now(),
         name: data.foods[0].food_name,
         calories: data.foods[0].nf_calories,

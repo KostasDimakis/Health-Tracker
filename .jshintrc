@@ -17,6 +17,8 @@
   "strict": true,
   "jquery": true,
   "globals": {
+    "NUTRITIONIX_API": true,
+    "router": true,
     "HealthTracker": true,
     "health-tracker": true,
     "_": false,
