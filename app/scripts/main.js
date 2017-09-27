@@ -132,7 +132,7 @@ var HealthTracker = {
     Backbone.history.start();
   }
 };
-
+// TODO: Add notifications, focus the search bar on switch and genereally improve UX
 $(document).ready(function () {
   'use strict';
   HealthTracker.init();
