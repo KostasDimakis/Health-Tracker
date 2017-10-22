@@ -52,4 +52,4 @@ Visit [online](https://konstantinosdimakis.github.io/Health-Tracker/dist/).
 * [npm](https://www.npmjs.com/) - npm is the package manager for JavaScript and the world’s largest software registry.
 
 ## LICENSE
-MIT © [Konstantinos Dimakis](https://github.com/KonstantinosDimakis)
+MIT © [Kostas Dimakis](https://github.com/KostasDimakis)
