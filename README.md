@@ -27,7 +27,7 @@ _These features are not currently being developed._
 
 ## Use the app
 
-Visit [online](https://konstantinosdimakis.github.io/Health-Tracker/dist/).
+Visit [online](https://kostasdimakis.github.io/Health-Tracker/dist/).
 
 ## Contribute
 
